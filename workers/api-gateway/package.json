@@ -1,0 +1,16 @@
+{
+  "name": "aquatic-diagnosis-api-gateway",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Workers API Gateway for aquatic-diagnosis-web",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail",
+    "secret:set": "wrangler secret put SUPABASE_SERVICE_ROLE_KEY"
+  },
+  "devDependencies": {
+    "wrangler": "^3.80.0"
+  }
+}

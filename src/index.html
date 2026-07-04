@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="水产智能诊断系统 — AI驱动的淡水鱼病识别与养殖知识库">
+  <title>水产智能诊断 | Aquatic Diagnosis</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <style>
+    /* Milestone1 骨架样式 */
+    :root {
+      --primary: #1a6b8a;
+      --bg: #f4f8fb;
+      --text: #2c3e50;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .logo {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: #e8f5e9;
+      color: #2e7d32;
+      margin-bottom: 2rem;
+    }
+    .milestone-info {
+      text-align: left;
+      background: #f9fafb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .milestone-info h3 {
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .milestone-info ul {
+      list-style: none;
+      padding: 0;
+    }
+    .milestone-info li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+    }
+    .milestone-info li::before {
+      content: "✅ ";
+    }
+    .api-test {
+      margin-top: 1.5rem;
+    }
+    .api-test button {
+      padding: 0.6rem 1.5rem;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .api-test button:hover {
+      background: #145a72;
+    }
+    .api-test pre {
+      margin-top: 1rem;
+      text-align: left;
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      max-height: 300px;
+      overflow-y: auto;
+      display: none;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🐟</div>
+    <h1>水产智能诊断系统</h1>
+    <p class="subtitle">Aquatic Disease Diagnosis — AI-Powered</p>
+    <span class="status-badge">Milestone 1 · 基础设施就绪</span>
+
+    <div class="milestone-info">
+      <h3>📋 Milestone1 完成清单</h3>
+      <ul>
+        <li>PostgreSQL 数据库建表（5 表）</li>
+        <li>RLS 行级安全策略配置</li>
+        <li>淡水鱼病种子数据（15 种鱼病）</li>
+        <li>Cloudflare Workers API 网关</li>
+        <li>项目目录结构标准化</li>
+        <li>Git 版本标签 v0.1.0</li>
+      </ul>
+    </div>
+
+    <div class="api-test">
+      <p style="font-size:0.85rem;color:#888;margin-bottom:0.8rem;">
+        API 网关地址: <code id="api-url">https://api-gateway.your-worker.workers.dev</code>
+      </p>
+      <button onclick="testApi()">🔗 测试 API 连通性</button>
+      <pre id="api-result"></pre>
+    </div>
+  </div>
+  <footer>
+    aquatic-diagnosis-web v0.1.0 · Powered by Cloudflare Pages + Supabase + ONNX AI
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>

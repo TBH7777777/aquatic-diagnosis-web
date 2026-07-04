@@ -1,0 +1,29 @@
+# ============================================================
+# aquatic-diagnosis-web | Cloudflare Workers 配置
+# 部署命令: npx wrangler deploy
+# ============================================================
+name = "aquatic-diagnosis-api"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+# ---- 环境变量（非敏感）----
+# 敏感值（SUPABASE_SERVICE_ROLE_KEY）请用 wrangler secret put 设置
+[vars]
+SUPABASE_URL = "https://your-project-id.supabase.co"
+SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+ALLOWED_ORIGINS = "https://aquatic-diagnosis.pages.dev,https://aquatic-diagnosis-web.pages.dev"
+
+# ---- 路由（可选）----
+# 如果绑定自定义域名，取消注释并修改：
+# routes = [
+#   { pattern = "api.your-domain.com/*", zone_id = "your-zone-id" }
+# ]
+
+# ---- 速率限制（Cloudflare 侧）----
+# 可在 Cloudflare Dashboard → Security → WAF → Rate Limiting 中配置
+
+# ---- 可观测性 ----
+[observability]
+enabled = true
+head_sampling_rate = 1

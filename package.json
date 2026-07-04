@@ -1,0 +1,20 @@
+{
+  "name": "aquatic-diagnosis-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "水产智能诊断网页 — AI驱动的淡水鱼病识别与养殖知识库",
+  "scripts": {
+    "dev": "npx serve src",
+    "worker:dev": "cd workers/api-gateway && npx wrangler dev",
+    "worker:deploy": "cd workers/api-gateway && npx wrangler deploy"
+  },
+  "keywords": [
+    "aquaculture",
+    "fish-disease",
+    "diagnosis",
+    "supabase",
+    "cloudflare"
+  ],
+  "author": "",
+  "license": "MIT"
+}
